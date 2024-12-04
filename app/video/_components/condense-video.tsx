@@ -73,15 +73,16 @@ const CondenseVideo = () => {
     const ffmpeg = ffmpegRef.current;
     await ffmpeg.load({
       coreURL: await toBlobURL(
-        `http://localhost:3000/download/ffmpeg-core.js`,
+        `https://condense-videos-main.vercel.app/video/download/ffmpeg-core.js`, // Updated URL
         "text/javascript"
       ),
       wasmURL: await toBlobURL(
-        `http://localhost:3000/download/ffmpeg-core.wasm`,
+        `https://condense-videos-main.vercel.app/video/download/ffmpeg-core.wasm`, // Updated URL
         "application/wasm"
       ),
     });
   };
+  
 
   const loadWithToast = () => {
     toast.promise(load, {
